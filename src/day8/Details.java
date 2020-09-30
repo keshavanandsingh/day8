@@ -1,6 +1,6 @@
 package day8;
 
-public class Contacts 
+public class Details 
 {
 	private String firstName;
 	private String lastName;
@@ -11,11 +11,11 @@ public class Contacts
 	private long mobileNumber;
 	private String emailId;
 	
-	public Contacts() {
+	public Details() {
 		
 	}
 	
-	public Contacts(String firstName, String lastName, String address, String city, String state, long zip, long mobileNumber, String emailId) {
+	public Details(String firstName, String lastName, String address, String city, String state, long zip, long mobileNumber, String emailId) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.address = address;
@@ -113,7 +113,7 @@ public class Contacts
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Contacts other = (Contacts) obj;
+		Details other = (Details) obj;
 		if (address == null) {
 			if (other.address != null)
 				return false;
@@ -163,4 +163,5 @@ public class Contacts
 	            " City : " + this.getCity() + " State: " + this.getState() + " Zip: " + this.getZip()
 	            + " Mobile Number: " + this.getMobileNumber() + " Email Id: " + this.getEmailId());
 	}
+
 }
