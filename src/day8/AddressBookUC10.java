@@ -1,23 +1,21 @@
 package day8;
-
 import java.util.Scanner;
-
-public class AddressBookUC9
+public class AddressBookUC10 
 {
 public static Address_Book ab = new Address_Book();
 	
 	public static void main(String[] args) {
 		
-		AddressBookUC9 u = new AddressBookUC9();
+		AddressBookUC10 u = new AddressBookUC10();
 		
 		Scanner sc = new Scanner(System.in);
 		
 		int count;
-		System.out.print("No. of new entry ");
+		System.out.print("Enter the count of person you want to add details of: ");
 		count = sc.nextInt();
 		
 		for(int i=0; i<count; i++) {
-			System.out.println("Give their details " + (i+1));
+			System.out.println("Enter the details as specified below for person " + (i+1));
 			u.Details(); 
 		}
 		
@@ -25,7 +23,7 @@ public static Address_Book ab = new Address_Book();
 		
 		if(ab.getArrListSize()!=0) 
 		{
-			System.out.println("city ");
+			System.out.println("Enter the name of the city to find complete details: ");
 			sc.nextLine();
 			String cityName = sc.nextLine();
 			ab.getDetailsAccCity(cityName);
@@ -34,13 +32,13 @@ public static Address_Book ab = new Address_Book();
 		{
 			System.out.println("Please enter atleast one person details to extract info...");
 			u.Details();
-			System.out.println("Enter city name to find complete details: ");
+			System.out.println("Enter the name of the city to find complete details: ");
 			sc.nextLine();
 			String cityName = sc.nextLine();
 			ab.getDetailsAccCity(cityName);
 		}
 		
-		System.out.println("Enter state name to find complete details: ");
+		System.out.println("Enter the name of the state to find complete details: ");
 		String stateName = sc.nextLine();
 		ab.getDetailsAccState(stateName);
 		
@@ -93,6 +91,6 @@ public static Address_Book ab = new Address_Book();
 			System.out.println("Please enter correct details.");
 			Details();
 		}
-		System.out.println("good, new contact added");
+		System.out.println("Thank you! The details have been added successfully!");
 	}
 }

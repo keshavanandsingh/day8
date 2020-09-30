@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class Address_Book
+public class Address_Book 
 {
 	private ArrayList<Contacts> arrList = new ArrayList<Contacts>();
 	private ArrayList<Contacts> arrCityList = new ArrayList<Contacts>();
@@ -55,6 +55,7 @@ public class Address_Book
 			}
 			flag++;
 		}
+		System.out.println("Calling the countByCity function. Count is: " + countByCity());
 		if(flagIndex == false) {
 			System.out.println("Sorry! There's no detail regarding this city.");
 		}
@@ -77,6 +78,7 @@ public class Address_Book
 			}
 			flag1++;
 		}
+		System.out.println("Calling the countByState function. Count is: " + countByState());
 		if(flagIndex1 == false) {
 			System.out.println("Sorry! There's no detail regarding this state.");
 			System.out.println("Thank you for using the address book system. Do visit again!");
@@ -96,6 +98,14 @@ public class Address_Book
 	
 	public ArrayList<Contacts> getStateArrList() {
 		return arrStateList;
+	}
+	
+	public int countByCity() {
+		return arrCityList.size();
+	}
+	
+	public int countByState() {
+		return arrStateList.size();
 	}
 	
 	public int getArrListSize() {
