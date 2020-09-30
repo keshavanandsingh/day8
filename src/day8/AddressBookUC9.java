@@ -2,22 +2,22 @@ package day8;
 
 import java.util.Scanner;
 
-public class AddressBookUC8
+public class AddressBookUC9
 {
-public static AdrsBook ab = new AdrsBook();
+public static Address_Book ab = new Address_Book();
 	
 	public static void main(String[] args) {
 		
-		AdrsBook u = new AdrsBook();
+		AddressBookUC9 u = new AddressBookUC9();
 		
 		Scanner sc = new Scanner(System.in);
 		
 		int count;
-		System.out.print("Enter the count of person you want to add details of: ");
+		System.out.print("No. of new entry ");
 		count = sc.nextInt();
 		
 		for(int i=0; i<count; i++) {
-			System.out.println("Enter the details as specified below for person " + (i+1));
+			System.out.println("Give their details " + (i+1));
 			u.Details(); 
 		}
 		
@@ -25,7 +25,7 @@ public static AdrsBook ab = new AdrsBook();
 		
 		if(ab.getArrListSize()!=0) 
 		{
-			System.out.println("Enter the name of the city to find complete details: ");
+			System.out.println("city ");
 			sc.nextLine();
 			String cityName = sc.nextLine();
 			ab.getDetailsAccCity(cityName);
@@ -34,13 +34,13 @@ public static AdrsBook ab = new AdrsBook();
 		{
 			System.out.println("Please enter atleast one person details to extract info...");
 			u.Details();
-			System.out.println("Enter the name of the city to find complete details: ");
+			System.out.println("Enter city name to find complete details: ");
 			sc.nextLine();
 			String cityName = sc.nextLine();
 			ab.getDetailsAccCity(cityName);
 		}
 		
-		System.out.println("Enter the name of the state to find complete details: ");
+		System.out.println("Enter state name to find complete details: ");
 		String stateName = sc.nextLine();
 		ab.getDetailsAccState(stateName);
 		
@@ -75,7 +75,7 @@ public static AdrsBook ab = new AdrsBook();
 		System.out.println("Enter email-Id:");
 		String emailId = sc.nextLine();
 		
-		Details c = new Details(firstName, lastName, address, city, state, zip, phoneNumber, emailId);
+		Contacts c = new Contacts(firstName, lastName, address, city, state, zip, phoneNumber, emailId);
 		
 		System.out.println("Please wait.....");
 		
@@ -88,11 +88,11 @@ public static AdrsBook ab = new AdrsBook();
 		    Thread.currentThread().interrupt();
 		}
 
-		boolean index = ab.addToAdrsBook(c);
+		boolean index = ab.addToAddressBook(c);
 		if(index == false) {
 			System.out.println("Please enter correct details.");
 			Details();
 		}
-		System.out.println("Thank you! The details have been added successfully!");
+		System.out.println("good, new contact added");
 	}
 }
